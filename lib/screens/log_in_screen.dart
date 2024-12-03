@@ -336,9 +336,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               .textTheme
                               .titleMedium
                               ?.copyWith(color: Colors.green),
-                          // style: TextStyle(
-                          //     fontSize: 18,
-                          //     color: Color.fromARGB(255, 52, 131, 55)),
                         ),
                         const SizedBox(
                           width: 10,
@@ -385,54 +382,36 @@ class _LoginScreenState extends State<LoginScreen> {
                           ?.copyWith(color: Colors.white),
                     )),
               ),
+              const SizedBox(height: 20),
+              InkWell(
+                onTap: () {
+                  _isLogin = !_isLogin;
 
-              // Container(
-              //   width: double.infinity,
-              //   height: 60,
-              //   decoration: BoxDecoration(
-              //     color: Colors.black,
-              //     borderRadius: BorderRadius.circular(15),
-              //   ),
-              //   child: TextButton(
-              //     onPressed: () async {
-              //       if (_formKey.currentState!.validate()) {
-              //         if (_isRememberMeSelected) {
-              //           await _saveUserCredentials();
-              //         }
+                  _nameController.clear();
+                  _emailController.clear();
+                  _passwordController.clear();
+                  setState(() {});
+                },
+                child: Container(
+                    height: 40,
+                    width: double.infinity,
+                    // child: TextButton(
+                    //     onPressed: () {
+                    // _isLogin = !_isLogin;
 
-              //         if (_isLogin) {
-              //           {
-              //             _logIn();
-              //           }
-              //         } else {
-              //           _signUp();
-              //         }
-              //       }
-              //     },
-              //     child: Text(
-              //       _isLogin ? "Login" : "Sign Up",
-              //       style: const TextStyle(
-              //           fontSize: 15,
-              //           fontWeight: FontWeight.bold,
-              //           color: Colors.white),
-              //     ),
-              //   ),
-              // ),
-              const SizedBox(height: 10),
-              TextButton(
-                  onPressed: () {
-                    _isLogin = !_isLogin;
-
-                    _nameController.clear();
-                    _emailController.clear();
-                    _passwordController.clear();
-                    setState(() {});
-                  },
-                  child: Text(
-                    _isLogin ? "Creat New Account" : "Go back to Login",
-                    style: Theme.of(context).textTheme.titleMedium,
-                    // style: const TextStyle(color: Colors.red, fontSize: 15),
-                  ))
+                    // _nameController.clear();
+                    // _emailController.clear();
+                    // _passwordController.clear();
+                    // setState(() {});
+                    //     },
+                    child: Text(
+                      _isLogin ? "Creat New Account" : "Go back to Login",
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 16),
+                    )),
+              ),
+              // )
             ],
           ),
         ),
