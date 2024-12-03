@@ -375,11 +375,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     child: Text(
-                      _isLogin ? "Login" : "Logout",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(color: Colors.white),
+                      _isLogin ? "Login.." : "Logout",
+                      // style: Theme.of(context)
+                      //     .textTheme
+                      //     .titleMedium
+                      //     ?.copyWith(color: Colors.white),
                     )),
               ),
               const SizedBox(height: 20),
