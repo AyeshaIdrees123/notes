@@ -384,6 +384,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 20),
               InkWell(
+
                 borderRadius: BorderRadius.circular(13),
                 onTap: () {
                   _isLogin = !_isLogin;
@@ -394,30 +395,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   setState(() {});
                 },
                 child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: Theme.of(context).colorScheme.primary),
-                      borderRadius: BorderRadius.circular(13)),
-                  // child: ElevatedButton(
-                  // onPressed: () {
-                  //   _isLogin = !_isLogin;
+                    height: 40,
+                    width: double.infinity,
+                    // child: TextButton(
+                    //     onPressed: () {
+                    // _isLogin = !_isLogin;
 
-                  //   _nameController.clear();
-                  //   _emailController.clear();
-                  //   _passwordController.clear();
-                  //   setState(() {});
-                  // },
-                  child: Center(
+                    // _nameController.clear();
+                    // _emailController.clear();
+                    // _passwordController.clear();
+                    // setState(() {});
+                    //     },
                     child: Text(
                       _isLogin ? "Creat New Account" : "Go back to Login",
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                    ),
-                  ),
-                ),
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 16),
+                    )),
               ),
               // )
             ],
