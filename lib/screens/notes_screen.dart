@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
+import 'package:notes/bloc/bloc/block_bloc.dart';
 import 'package:notes/models/note.dart';
 import 'package:notes/screens/log_in_screen.dart';
 import 'package:notes/screens/note_detail_screen.dart';
@@ -27,6 +29,7 @@ class _NotesScreenState extends State<NotesScreen> {
       );
 
   bool _isLoading = false;
+  bool _isThemeDark = true;
 
   @override
   void initState() {
@@ -82,6 +85,26 @@ class _NotesScreenState extends State<NotesScreen> {
         titleSpacing: 0.9,
         title: const Text("Notes"),
         actions: [
+          InkWell(
+            borderRadius: BorderRadius.circular(15),
+            onTap: () {
+              context.read<ThemeBloc>().add(ToggelEvent());
+              setState(() {
+                _isThemeDark = !_isThemeDark;
+              });
+            },
+            child: BlocBuilder<ThemeBloc, ThemeMode>(
+              builder: (context, state) {
+                return IconContainer(
+                    icon: state == ThemeMode.dark
+                        ? Icons.dark_mode
+                        : Icons.dark_mode_outlined);
+              },
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
           InkWell(
               borderRadius: BorderRadius.circular(15),
               onTap: () {
