@@ -12,7 +12,6 @@ void main() async {
   FirebaseApp app = await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform);
   FirebaseAuth.instanceFor(app: app);
-
   runApp(const MyApp());
 }
 
