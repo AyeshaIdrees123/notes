@@ -154,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 10),
               Text(
-                _isLogin ? "Welcome back" : "Signup to get started",
+                _isLogin ? "Welcome back" : "SignUp to get started",
               ),
               const SizedBox(height: 60),
               Form(
@@ -374,15 +374,16 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     child: Text(
-                      _isLogin ? "Login" : "Logout",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(color: Colors.white),
+                      _isLogin ? "Login.." : "Logout",
+                      // style: Theme.of(context)
+                      //     .textTheme
+                      //     .titleMedium
+                      //     ?.copyWith(color: Colors.white),
                     )),
               ),
               const SizedBox(height: 20),
               InkWell(
+                borderRadius: BorderRadius.circular(13),
                 onTap: () {
                   _isLogin = !_isLogin;
 
