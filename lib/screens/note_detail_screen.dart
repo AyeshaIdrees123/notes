@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:notes/cards/confirmation_dialogue.dart';
 import 'package:notes/models/note.dart';
-// import 'package:notes/widgets/app_theme.dart';
 import 'package:notes/widgets/icon_container.dart';
 
 class NoteDetailsScreen extends StatefulWidget {
@@ -39,7 +38,7 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
 
   bool _canEdit = false;
 
-  final decoration = InputDecoration(
+  final decoration = const InputDecoration(
     hintText: '',
     border: InputBorder.none,
     contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
@@ -47,7 +46,6 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
       body: Column(
         children: [
           const SizedBox(height: 60),
@@ -90,7 +88,7 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
               Row(
                 children: [
                   InkWell(
-                    // borderRadius: ,
+                    borderRadius: BorderRadius.circular(13),
                     onTap: () {
                       setState(() {
                         _canEdit = !_canEdit;
@@ -102,7 +100,7 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
                   if (_canEdit) ...[
                     const SizedBox(width: 23),
                     InkWell(
-                      // borderRadius: ,
+                      borderRadius: BorderRadius.circular(13),
                       onTap: () {
                         if (_titleController.text.isNotEmpty) {
                           showDialog(
