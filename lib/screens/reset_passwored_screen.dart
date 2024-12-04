@@ -57,10 +57,7 @@ class _ResetPassworedScreenState extends State<ResetPassworedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
-      appBar: AppBar(
-          // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
-          ),
+      appBar: AppBar(),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -70,11 +67,6 @@ class _ResetPassworedScreenState extends State<ResetPassworedScreen> {
               Text(
                 "Reset Passwored",
                 style: Theme.of(context).textTheme.displayLarge,
-                // style: TextStyle(
-                //   fontSize: 35,
-                //   fontWeight: FontWeight.bold,
-                //   // color: Colors.white
-                // ),
               ),
               const SizedBox(height: 60),
               Form(
@@ -98,9 +90,6 @@ class _ResetPassworedScreenState extends State<ResetPassworedScreen> {
                             color: Color.fromARGB(255, 108, 105, 105),
                           ),
                           label: Text("Email"),
-                          // labelStyle: TextStyle(
-                          //   color: Color.fromARGB(255, 185, 177, 177),
-                          // ),
                         ),
                         validator: (value) {
                           if (value == null || value == '') {
@@ -132,7 +121,6 @@ class _ResetPassworedScreenState extends State<ResetPassworedScreen> {
               if (!_isForgotPasswored)
                 const Text(
                   'Send a link for reset passwored\n on your email account.',
-                  // style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               const SizedBox(height: 30),
               if (_isForgotPasswored)
@@ -153,27 +141,6 @@ class _ResetPassworedScreenState extends State<ResetPassworedScreen> {
                             color: Colors.white),
                       ),
                     )),
-              // Container(
-              //   width: double.infinity,
-              //   height: 60,
-              //   decoration: BoxDecoration(
-              //       color: Colors.black,
-              //       borderRadius: BorderRadius.circular(15)),
-              //   child: TextButton(
-              //     onPressed: () async {
-              //       if (_formKey.currentState!.validate()) {
-              //         await _sendEmailResetPassword(_emailController.text);
-              //       }
-              //     },
-              //     child: const Text(
-              //       'send',
-              //       style: TextStyle(
-              //           fontSize: 15,
-              //           fontWeight: FontWeight.bold,
-              //           color: Colors.white),
-              //     ),
-              //   ),
-              // ),
               const SizedBox(height: 10),
               TextButton(
                   onPressed: () {
@@ -182,7 +149,6 @@ class _ResetPassworedScreenState extends State<ResetPassworedScreen> {
                   child: Text(
                     'Go to Back',
                     style: Theme.of(context).textTheme.titleMedium,
-                    // style: TextStyle(color: Colors.red, fontSize: 16),
                   ))
             ],
           ),
