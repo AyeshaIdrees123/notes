@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
-import 'package:notes/bloc/bloc/block_bloc.dart';
 import 'package:notes/models/user.dart';
 import 'package:notes/screens/notes_screen.dart';
 import 'package:notes/screens/reset_passwored_screen.dart';
@@ -137,16 +135,6 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              // BlocBuilder<ThemeBloc, ThemeMode>(
-              //   builder: (ctx, state) {
-              //     return Switch(
-              //       value: state == ThemeMode.dark,
-              //       onChanged: (newvalue) {
-              //         ctx.read<ThemeBloc>().add(ToggelEvent());
-              //       },
-              //     );
-              //   },
-              // ),
               const SizedBox(height: 90),
               Text(
                 _isLogin ? "Login" : "Signup",
@@ -307,7 +295,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Text(
                               "Forgot password",
                               style: Theme.of(context).textTheme.titleMedium,
-                              // TextStyle(fontSize: 18, color: Colors.red),
                             ),
                           ),
                         ],
