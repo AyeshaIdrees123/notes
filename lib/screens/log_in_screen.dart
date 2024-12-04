@@ -137,19 +137,19 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              BlocBuilder<ThemeBloc, ThemeMode>(
-                builder: (ctx, state) {
-                  return Switch(
-                    value: state == ThemeMode.dark,
-                    onChanged: (newvalue) {
-                      ctx.read<ThemeBloc>().add(ToggelEvent());
-                    },
-                  );
-                },
-              ),
-              const SizedBox(height: 70),
+              // BlocBuilder<ThemeBloc, ThemeMode>(
+              //   builder: (ctx, state) {
+              //     return Switch(
+              //       value: state == ThemeMode.dark,
+              //       onChanged: (newvalue) {
+              //         ctx.read<ThemeBloc>().add(ToggelEvent());
+              //       },
+              //     );
+              //   },
+              // ),
+              const SizedBox(height: 90),
               Text(
-                _isLogin ? "LogIn" : "SignUp",
+                _isLogin ? "Login" : "Signup",
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               const SizedBox(height: 10),
@@ -375,16 +375,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                     child: Text(
-                      _isLogin ? "Login.." : "Logout",
-                      // style: Theme.of(context)
-                      //     .textTheme
-                      //     .titleMedium
-                      //     ?.copyWith(color: Colors.white),
+                      _isLogin ? "Login" : "Logout",
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium
+                          ?.copyWith(color: Colors.white),
                     )),
               ),
               const SizedBox(height: 20),
               InkWell(
-
                 borderRadius: BorderRadius.circular(13),
                 onTap: () {
                   _isLogin = !_isLogin;
@@ -397,20 +396,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Container(
                     height: 40,
                     width: double.infinity,
-                    // child: TextButton(
-                    //     onPressed: () {
-                    // _isLogin = !_isLogin;
-
-                    // _nameController.clear();
-                    // _emailController.clear();
-                    // _passwordController.clear();
-                    // setState(() {});
-                    //     },
-                    child: Text(
-                      _isLogin ? "Creat New Account" : "Go back to Login",
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 16),
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Theme.of(context).colorScheme.primary),
+                        borderRadius: BorderRadius.circular(13)),
+                    child: Center(
+                      child: Text(
+                        _isLogin ? "Creat New Account" : "Go back to Login",
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                            fontSize: 16),
+                      ),
                     )),
               ),
               // )
