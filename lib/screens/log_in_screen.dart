@@ -307,7 +307,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Text(
                               "Forgot password",
                               style: Theme.of(context).textTheme.titleMedium,
-                              // TextStyle(fontSize: 18, color: Colors.red),
                             ),
                           ),
                         ],
