@@ -72,23 +72,15 @@ class _NotesScreenState extends State<NotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
             logOut();
           },
-          child: const Icon(
-            Icons.login_outlined,
-            // color: Colors.white,
-          ),
+          child: const Icon(Icons.login_outlined),
         ),
         titleSpacing: 0.9,
-        // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
-        title: const Text(
-          "Notes",
-          // style: TextStyle(color: Colors.white, fontSize: 30),
-        ),
+        title: const Text("Notes"),
         actions: [
           InkWell(
               borderRadius: BorderRadius.circular(15),
@@ -99,31 +91,8 @@ class _NotesScreenState extends State<NotesScreen> {
                         builder: (context) => const SearchNotesScreen()));
               },
               child: const IconContainer(icon: Icons.search)),
-          // Container(
-          //   height: 50,
-          //   width: 50,
-          //   decoration: BoxDecoration(
-          //     color: Theme.of(context).colorScheme.onPrimary,
-          //     // color: const Color.fromRGBO(59, 59, 59, 1),
-          //     borderRadius: BorderRadius.circular(15),
-          //   ),
-          //   child: InkWell(
-          //     borderRadius: BorderRadius.circular(15),
-          //     onTap: () {
-          //       Navigator.push(
-          //           context,
-          //           MaterialPageRoute(
-          //               builder: (context) => const SearchNotesScreen()));
-          //     },
-          //     child: const Icon(
-          //       Icons.search,
-          //       // color: Colors.white,
-          //     ),
-          //   ),
-          // ),
-          const SizedBox(
-            width: 20,
-          ),
+
+          const SizedBox(width: 20),
           const IconContainer(icon: Icons.info_outline),
           // Container(
           //     height: 50,
