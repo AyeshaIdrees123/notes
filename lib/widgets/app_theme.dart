@@ -22,7 +22,7 @@ class AppTheme {
     colorScheme: const ColorScheme.light(
       onPrimaryFixed: _hintTextColor,
       primary: Colors.black,
-      onPrimary: Color.fromARGB(255, 241, 238, 238),
+      onPrimary: Color.fromARGB(255, 241, 238, 239),
     ),
     useMaterial3: true,
     elevatedButtonTheme: _elevatedButtonTheme,
