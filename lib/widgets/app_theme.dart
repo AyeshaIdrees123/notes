@@ -6,6 +6,7 @@ class AppTheme {
       surface: _surfaceColor,
       onPrimary: _primaryColor,
       onPrimaryFixed: _hintTextColor,
+      primary: Colors.white,
     ),
     useMaterial3: true,
     elevatedButtonTheme: _elevatedButtonTheme,
@@ -21,6 +22,7 @@ class AppTheme {
     colorScheme: const ColorScheme.light(
       onPrimaryFixed: _hintTextColor,
       onPrimary: Color.fromARGB(255, 241, 238, 238),
+      primary: Colors.black,
     ),
     useMaterial3: true,
     elevatedButtonTheme: _elevatedButtonTheme,

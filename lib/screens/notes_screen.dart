@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
+import 'package:notes/bloc/bloc/block_bloc.dart';
 import 'package:notes/models/note.dart';
 import 'package:notes/screens/log_in_screen.dart';
 import 'package:notes/screens/note_detail_screen.dart';
@@ -27,6 +29,7 @@ class _NotesScreenState extends State<NotesScreen> {
       );
 
   bool _isLoading = false;
+  bool _isThemeDark = true;
 
   @override
   void initState() {
@@ -54,7 +57,6 @@ class _NotesScreenState extends State<NotesScreen> {
 
   void _deleteNote(Note note) async {
     Loader.show(context, progressIndicator: const CircularProgressIndicator());
-
     final id = note.id;
     final noteDoc = _notesRef.doc(id);
     await noteDoc.delete();
@@ -72,7 +74,6 @@ class _NotesScreenState extends State<NotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
@@ -80,16 +81,35 @@ class _NotesScreenState extends State<NotesScreen> {
           },
           child: const Icon(
             Icons.login_outlined,
-            // color: Colors.white,
           ),
         ),
         titleSpacing: 0.9,
-        // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
         title: const Text(
           "Notes",
-          // style: TextStyle(color: Colors.white, fontSize: 30),
         ),
         actions: [
+          InkWell(
+            borderRadius: BorderRadius.circular(15),
+            onTap: () {
+              context.read<ThemeBloc>().add(ToggelEvent());
+              setState(() {
+                _isThemeDark = !_isThemeDark;
+              });
+            },
+            child: BlocBuilder<ThemeBloc, ThemeMode>(
+              builder: (context, state) {
+                return IconContainer(
+                    icon: state == ThemeMode.dark
+                        ? Icons.dark_mode
+                        : Icons.dark_mode_outlined);
+              },
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          // Icon(Icons.dark_mode),
+          // Icon(Icons.dark_mode_outlined),
           InkWell(
               borderRadius: BorderRadius.circular(15),
               onTap: () {

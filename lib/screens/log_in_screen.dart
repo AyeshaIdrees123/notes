@@ -137,24 +137,24 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              BlocBuilder<ThemeBloc, ThemeMode>(
-                builder: (ctx, state) {
-                  return Switch(
-                    value: state == ThemeMode.dark,
-                    onChanged: (newvalue) {
-                      ctx.read<ThemeBloc>().add(ToggelEvent());
-                    },
-                  );
-                },
-              ),
-              const SizedBox(height: 70),
+              // BlocBuilder<ThemeBloc, ThemeMode>(
+              //   builder: (ctx, state) {
+              //     return Switch(
+              //       value: state == ThemeMode.dark,
+              //       onChanged: (newvalue) {
+              //         ctx.read<ThemeBloc>().add(ToggelEvent());
+              //       },
+              //     );
+              //   },
+              // ),
+              const SizedBox(height: 90),
               Text(
-                _isLogin ? "LogIn" : "SignUp",
+                _isLogin ? "Login" : "Signup",
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               const SizedBox(height: 10),
               Text(
-                _isLogin ? "Welcom back." : "SignUp to get started.",
+                _isLogin ? "Welcome back" : "Signup to get started",
               ),
               const SizedBox(height: 60),
               Form(
@@ -392,24 +392,41 @@ class _LoginScreenState extends State<LoginScreen> {
                   _passwordController.clear();
                   setState(() {});
                 },
-                child: Container(
-                    height: 40,
-                    width: double.infinity,
-                    // child: TextButton(
-                    //     onPressed: () {
-                    // _isLogin = !_isLogin;
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(13),
+                  onTap: () {
+                    _isLogin = !_isLogin;
 
-                    // _nameController.clear();
-                    // _emailController.clear();
-                    // _passwordController.clear();
-                    // setState(() {});
-                    //     },
-                    child: Text(
-                      _isLogin ? "Creat New Account" : "Go back to Login",
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 16),
-                    )),
+                    _nameController.clear();
+                    _emailController.clear();
+                    _passwordController.clear();
+                    setState(() {});
+                  },
+                  child: Container(
+                      height: 50,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Theme.of(context).colorScheme.primary),
+                          borderRadius: BorderRadius.circular(13)),
+                      // child: TextButton(
+                      //     onPressed: () {
+                      // _isLogin = !_isLogin;
+
+                      // _nameController.clear();
+                      // _emailController.clear();
+                      // _passwordController.clear();
+                      // setState(() {});
+                      //     },
+                      child: Center(
+                        child: Text(
+                          _isLogin ? "Creat New Account" : "Go back to Login",
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
+                              fontSize: 16),
+                        ),
+                      )),
+                ),
               ),
               // )
             ],

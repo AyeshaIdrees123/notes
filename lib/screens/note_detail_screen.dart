@@ -39,7 +39,7 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
 
   bool _canEdit = false;
 
-  final decoration = InputDecoration(
+  final decoration = const InputDecoration(
     hintText: '',
     border: InputBorder.none,
     contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
@@ -47,7 +47,6 @@ class _NoteDetailsScreenState extends State<NoteDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
       body: Column(
         children: [
           const SizedBox(height: 60),
