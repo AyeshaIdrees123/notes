@@ -38,7 +38,7 @@ class AppTheme {
   static const _primaryColor = Color.fromRGBO(59, 59, 59, 1);
   static const _displayLarge =
       TextStyle(fontSize: 35, fontWeight: FontWeight.bold);
-  static const _titleMedium = TextStyle(fontSize: 16, color: Colors.red);
+  static const _titleMedium = TextStyle(fontSize: 17, color: Colors.red);
   static final _elevatedButtonTheme = ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
