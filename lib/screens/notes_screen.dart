@@ -114,20 +114,8 @@ class _NotesScreenState extends State<NotesScreen> {
                         builder: (context) => const SearchNotesScreen()));
               },
               child: const IconContainer(icon: Icons.search)),
-
           const SizedBox(width: 20),
           const IconContainer(icon: Icons.info_outline),
-          // Container(
-          //     height: 50,
-          //     width: 50,
-          //     decoration: BoxDecoration(
-          //         color: Theme.of(context).colorScheme.onPrimary,
-          //         // color: const Color.fromRGBO(59, 59, 59, 1),
-          //         borderRadius: BorderRadius.circular(15)),
-          //     child: const Icon(
-          //       Icons.info_outline,
-          //       // color: Colors.white,
-          //     )),
           const SizedBox(width: 20)
         ],
       ),
