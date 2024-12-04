@@ -21,7 +21,7 @@ class AppTheme {
   final ThemeData lightTheme = ThemeData(
     colorScheme: const ColorScheme.light(
       onPrimaryFixed: _hintTextColor,
-      onPrimary: Color.fromARGB(255, 241, 238, 236),
+      onPrimary: Color.fromARGB(255, 241, 238, 238),
       primary: Colors.black,
     ),
     useMaterial3: true,
