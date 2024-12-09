@@ -16,6 +16,7 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   final TextEditingController searchColntroller = TextEditingController();
   List<Note> notes = [];
   List<Note> notesCopyList = [];
+  bool variabl = true;
 
   static final _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
