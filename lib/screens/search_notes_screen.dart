@@ -40,7 +40,7 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
     for (var noteData in noteSnapShote.docs) {
       final note = noteData.data();
       notes.add(note);
-      print("object");
+      print("objects");
     }
   }
 
