@@ -29,7 +29,7 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   @override
   void initState() {
     super.initState();
-    _fetchNotes();
+    _fetchNotes(); // Fetch notes when the widget is initialized
   }
 
   void _fetchNotes() async {
