@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:notes/models/note.dart';
 import 'package:notes/widgets/icon_container.dart';
@@ -17,6 +18,7 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   List<Note> notesCopyList = [];
 
   static final _firestore = FirebaseFirestore.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   final _notesRef = _firestore.collection("notes").withConverter<Note>(
         fromFirestore: (snapshot, _) => Note.fromJson(snapshot.data()!),
@@ -30,7 +32,10 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   }
 
   void _fetchNotes() async {
-    final noteSnapShote = await _notesRef.get();
+    final userID = _auth.currentUser?.uid;
+
+    final noteSnapShote =
+        await _notesRef.where('userId', isEqualTo: userID).get();
     for (var noteData in noteSnapShote.docs) {
       final note = noteData.data();
       notes.add(note);
@@ -40,7 +45,6 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
