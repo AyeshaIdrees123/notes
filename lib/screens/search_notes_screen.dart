@@ -29,7 +29,7 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   @override
   void initState() {
     super.initState();
-    _fetchNotes();
+    _fetchNotes(); //fgyhujk
   }
 
   void _fetchNotes() async {
