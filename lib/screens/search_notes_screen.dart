@@ -29,7 +29,9 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   @override
   void initState() {
     super.initState();
-    _fetchNotes(); // Fetch notes when the widget is initialized
+    _fetchNotes(); // Fetch notes
+    _showLoadingIndicator(); // Show a loading indicator
+    print("UI enhancements for notes fetching in ui-fix branch");
   }
 
   void _fetchNotes() async {
