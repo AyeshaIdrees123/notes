@@ -41,7 +41,7 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
       final note = noteData.data();
       notes.add(note);
       print("objects");
-      print("hello");
+      print("helloooo");
     }
   }
 
