@@ -35,9 +35,13 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
     print("Notes fetching initialized in the main branch");
     _initializeAnalytics(); // Initialize analytics
   }
+
 /*hdfh
 vjhgkuyg
-jhgkuyti */
+jhgkuyti 
+sswdefrgt
+4567uyi
+5tr*/
   void _fetchNotes() async {
     final userID = _auth.currentUser?.uid;
 
