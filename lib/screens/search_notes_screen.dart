@@ -34,13 +34,13 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
     for (var noteData in noteSnapShote.docs) {
       final note = noteData.data();
       notes.add(note);
+      print('welcome');
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(37, 37, 37, 1),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
