@@ -39,11 +39,8 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
     for (var noteData in noteSnapShote.docs) {
       final note = noteData.data();
       notes.add(note);
-<<<<<<< HEAD
-      print('welcome');
-=======
       print('hello');
->>>>>>> refs/remotes/origin/main
+      print('welcome');
     }
   }
 
