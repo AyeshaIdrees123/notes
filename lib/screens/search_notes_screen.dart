@@ -32,6 +32,8 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
     _fetchNotes(); // Fetch notes
     _showLoadingIndicator(); // Show a loading indicator
     print("UI enhancements for notes fetching in ui-fix branch");
+    print("Notes fetching initialized in the main branch");
+    _initializeAnalytics(); // Initialize analytics
   }
 
   void _fetchNotes() async {
