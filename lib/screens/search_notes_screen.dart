@@ -30,10 +30,20 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
   void initState() {
     super.initState();
     _fetchNotes(); // Fetch notes
+    _showLoadingIndicator(); // Show a loading indicator
+    print("UI enhancements for notes fetching in ui-fix branch");
     print("Notes fetching initialized in the main branch");
     _initializeAnalytics(); // Initialize analytics
   }
 
+/*hdfh
+vjhgkuyg
+jhgkuyti 
+sswdefrgt
+4567uyi
+5tr
+asdrtghjklo
+*/
   void _fetchNotes() async {
     final userID = _auth.currentUser?.uid;
 
