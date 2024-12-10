@@ -44,3 +44,4 @@ app.*.map.json
 .vs/
 .vs/
 /lib/credential.dartlib/screens/notes_screen.dart
+lib/screens/notes_screen.dart
