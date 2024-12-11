@@ -32,14 +32,7 @@ class _SearchNotesScreenState extends State<SearchNotesScreen> {
     _fetchNotes(); // Fetch notes
   }
 
-/*hdfh
-vjhgkuyg
-jhgkuyti 
-sswdefrgt
-4567uyi
-5tr
-asdrtghjklo
-*/
+
   void _fetchNotes() async {
     final userID = _auth.currentUser?.uid;
 
